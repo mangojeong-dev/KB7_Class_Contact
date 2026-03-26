@@ -1,19 +1,29 @@
 <template>
   <tr>
-    <td>{{ ContactItem.name }}</td>
-    <td>{{ ContactItem.gender }}</td>
-    <td>{{ ContactItem.age }}</td>
-    <td>{{ ContactItem.email }}</td>
-    <td>{{ ContactItem.github }}</td>
+    <td>{{ contactItem.name }}</td>
+    <td>{{ contactItem.gender }}</td>
+    <td>{{ contactItem.age }}</td>
+    <td>{{ contactItem.email }}</td>
+    <td>{{ contactItem.github }}</td>
     <td>
-      <button class="btn btn-danger btn-sm">삭제</button>
+      <button
+        class="btn btn-danger btn-sm"
+        @click="$emit('delete-contact', contactItem.id)"
+      >
+        삭제
+      </button>
     </td>
   </tr>
 </template>
 
 <script>
 export default {
-  name: 'ContactItem',
-  props: ['ContactItem'],
+  name: "ContactItem",
+  props: {
+    contactItem: {
+      type: Object,
+    },
+  },
+  emits: ["delete-contact"],
 };
 </script>

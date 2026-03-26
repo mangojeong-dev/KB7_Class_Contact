@@ -13,9 +13,10 @@
       </thead>
       <tbody>
         <ContactItem
-          v-for="ContactItem in contacts"
-          key="ContactItem.id"
-          :ContactItem="ContactItem"
+          v-for="contact in contacts"
+          :key="contact.id"
+          :contact-item="contact"
+          @delete-contact="$emit('delete-contact', $event)"
         />
       </tbody>
     </table>
@@ -23,7 +24,7 @@
 </template>
 
 <script>
-import ContactItem from './ContactItem.vue';
+import ContactItem from "./ContactItem.vue";
 export default {
   components: {
     ContactItem,
@@ -33,5 +34,6 @@ export default {
       type: Array,
     },
   },
+  emits: ["delete-contact"],
 };
 </script>
