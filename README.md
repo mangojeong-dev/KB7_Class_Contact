@@ -1,3 +1,8 @@
+# 개발 방식 & 리뷰
+# https://holy-wish-a51.notion.site/Component_Advanced-32f08051a20180a48de1d5911ba860b7
+
+
+
 # contects-app-practice
 
 This template should help get you started developing with Vue 3 in Vite.
